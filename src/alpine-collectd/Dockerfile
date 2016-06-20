@@ -1,4 +1,4 @@
-FROM stonevil/alpine-base
+FROM quay.io/stonevil/alpine-base
 MAINTAINER stonevil@gmail.com
 
 ENV COLLECTD_VERSION=${COLLECTD_VERSION:-5.5.1-r0}
