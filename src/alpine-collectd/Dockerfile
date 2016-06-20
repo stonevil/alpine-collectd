@@ -3,7 +3,7 @@ MAINTAINER stonevil@gmail.com
 
 ENV COLLECTD_VERSION=${COLLECTD_VERSION:-5.5.1-r0}
 
-LABEL com.stonevil.collectd.version=${COLLECTD_VERSION}
+LABEL com.stonevil.collectd.version=${COLLECTD_VERSION} \
   com.stonevil.k8s.ready=true
 
 RUN ${APK_UPGRADE_CMD} && \
