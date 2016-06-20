@@ -21,7 +21,7 @@ ENV INFLUXDB_PORT=${INFLUXDB_PORT:-25826}
 
 CMD mkdir -p /data/collectd && chown -Rf collectd /data/collectd && \
   if ${INFLUXDB_OUTPUT_INIT}; then \
-  (sed -i -e 's|_INFLUXDBHOST_|'"${INFLUXDB_HOST}"'|g' -e 's|_INFLUXDBPORT__|'"${INFLUXDB_PORT}"'|g' /etc/collectd/collectd.conf && \
+  (sed -i -e 's|_INFLUXDBHOST_|'"${INFLUXDB_HOST}"'|g' -e 's|_INFLUXDBPORT_|'"${INFLUXDB_PORT}"'|g' /etc/collectd/collectd.conf && \
   echo 'Include "/etc/collectd/conf.d/influxdb.conf"' >> /etc/collectd/collectd.conf); fi && \
   gosu collectd collectd -f -t -C /etc/collectd/collectd.conf && \
   gosu collectd collectd -f -C /etc/collectd/collectd.conf
